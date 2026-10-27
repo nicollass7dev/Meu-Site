@@ -86,21 +86,21 @@ document.querySelectorAll('.reveal').forEach((element) => observer.observe(eleme
 
 const projectData = {
   lume: {
-    index: '01', type: 'Site institucional', title: 'Lume Arquitetura',
-    description: 'Uma presença digital silenciosa e espacial, criada para apresentar projetos com ritmo editorial e deixar as imagens respirarem.',
-    deliverables: ['Direção visual', 'Arquitetura de conteúdo', 'Motion responsivo'],
+    index: '01', type: 'Arquitetura', title: 'Site institucional',
+    description: 'Página com bastante espaço, tipografia grande e foco nas imagens dos projetos. Funciona bem para arquitetos e profissionais de interiores.',
+    deliverables: ['Layout editorial', 'Galeria responsiva', 'Animação leve'],
     colors: ['#bf402d', '#e7e0d0', '#253529'], accent: '#bf402d'
   },
   croma: {
-    index: '02', type: 'Catálogo digital', title: 'Croma Objetos',
-    description: 'Um catálogo vibrante que organiza a descoberta por cor, coleção e material, mantendo o produto no centro da experiência.',
-    deliverables: ['Sistema de catálogo', 'Direção cromática', 'Interações de descoberta'],
+    index: '02', type: 'Produtos', title: 'Catálogo digital',
+    description: 'Produtos organizados por coleção, cor e material. A navegação facilita a comparação sem esconder preço, medidas e outras informações importantes.',
+    deliverables: ['Categorias e filtros', 'Página de produto', 'Busca responsiva'],
     colors: ['#f4b529', '#663bd8', '#48a5e5'], accent: '#f4b529'
   },
   orbita: {
-    index: '03', type: 'Portfólio autoral', title: 'Órbita Criativa',
-    description: 'Um portfólio com ritmo de campanha: trabalhos entram em órbita enquanto a navegação permanece clara, rápida e previsível.',
-    deliverables: ['Narrativa de projetos', 'Identidade digital', 'Microinterações'],
+    index: '03', type: 'Projetos criativos', title: 'Portfólio autoral',
+    description: 'Projetos em destaque, texto curto e transições mais marcantes. A navegação continua simples para que o efeito não atrapalhe o conteúdo.',
+    deliverables: ['Página de projeto', 'Navegação simples', 'Microinterações'],
     colors: ['#d7d8f7', '#4b55d5', '#151624'], accent: '#4b55d5'
   }
 };
@@ -216,7 +216,7 @@ form.addEventListener('submit', (event) => {
   formError.hidden = true;
   const data = new FormData(form);
   const date = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long' }).format(new Date());
-  generatedBrief = `BRIEFING INICIAL — ${data.get('nome')}\nGerado em ${date}\n\nTipo de projeto\n${data.get('tipo')}\n\nMomento atual\n${data.get('momento')}\n\nObjetivo principal\n${data.get('objetivo')}\n\nPróximos pontos para alinhar\n• Público e jornada principal\n• Conteúdo e materiais disponíveis\n• Referências e direção visual\n• Escopo, prazo e formato de entrega`;
+  generatedBrief = `PEDIDO DE ORÇAMENTO: ${data.get('nome')}\nGerado em ${date}\n\nTipo de projeto\n${data.get('tipo')}\n\nMomento atual\n${data.get('momento')}\n\nObjetivo principal\n${data.get('objetivo')}\n\nPontos para conversar\n• Público e principal ação do visitante\n• Conteúdo e materiais disponíveis\n• Referências visuais\n• Páginas, prazo e forma de entrega`;
   resultText.textContent = generatedBrief;
   const whatsappMessage = `Olá, Nicollas! Quero pedir um orçamento.\n\n${generatedBrief}`;
   document.querySelector('[data-whatsapp]').href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
