@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111311" />
+    <meta name="description" content="Estúdio independente de design e desenvolvimento para sites, catálogos e portfólios digitais." />
+    <title>Nicollas Studio — Design & Web</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#inicio" aria-label="Nicollas Studio — início">
+        <span class="brand-mark" aria-hidden="true">N.</span>
+        <span>Nicollas Studio</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span class="sr-only">Abrir menu</span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+        <a href="#trabalhos">Trabalhos</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#processo">Processo</a>
+        <a href="#briefing">Briefing</a>
+      </nav>
+
+      <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false">
+        <span class="motion-dot" aria-hidden="true"></span>
+        <span data-motion-label>Motion ligado</span>
+      </button>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Design & desenvolvimento independente</p>
+          <h1 id="hero-title" class="hero-title" aria-label="Sites que se movem. Marcas que ficam.">
+            <span class="line"><span>Sites que</span></span>
+            <span class="line accent-line"><span>se movem.</span></span>
+            <span class="line"><span>Marcas que ficam.</span></span>
+          </h1>
+          <div class="hero-bottom reveal">
+            <p>Criação de experiências digitais com estratégia, identidade e código — de sites autorais a catálogos e portfólios.</p>
+            <div class="hero-actions">
+              <a class="button button-primary magnetic" href="#briefing">
+                Começar um projeto
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a class="text-link" href="https://wa.me/5518991820132?text=Ol%C3%A1%2C%20Nicollas!%20Quero%20pedir%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer">WhatsApp direto <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-stage" aria-hidden="true" data-parallax>
+          <div class="stage-orbit orbit-one"></div>
+          <div class="stage-orbit orbit-two"></div>
+          <div class="stage-card stage-card-a">
+            <span>Web design</span>
+            <strong>01</strong>
+          </div>
+          <div class="stage-card stage-card-b">
+            <span>Motion</span>
+            <strong>02</strong>
+          </div>
+          <div class="stage-core">
+            <span>IDEIA</span>
+            <span>→</span>
+            <span>EXPERIÊNCIA</span>
+          </div>
+        </div>
+
+        <a class="scroll-cue" href="#trabalhos">
+          <span>Explore</span>
+          <span class="scroll-line" aria-hidden="true"></span>
+        </a>
+      </section>
+
+      <section class="ticker" aria-label="Especialidades">
+        <div class="ticker-track">
+          <span>Sites autorais</span><i>✦</i><span>Catálogos digitais</span><i>✦</i><span>Portfólios</span><i>✦</i><span>Landing pages</span><i>✦</i><span>Direção visual</span><i>✦</i>
+          <span aria-hidden="true">Sites autorais</span><i aria-hidden="true">✦</i><span aria-hidden="true">Catálogos digitais</span><i aria-hidden="true">✦</i><span aria-hidden="true">Portfólios</span><i aria-hidden="true">✦</i><span aria-hidden="true">Landing pages</span><i aria-hidden="true">✦</i><span aria-hidden="true">Direção visual</span><i aria-hidden="true">✦</i>
+        </div>
+      </section>
+
+      <section class="work section-shell" id="trabalhos" aria-labelledby="work-title">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Projetos selecionados</p>
+            <h2 id="work-title">Design que não fica parado.</h2>
+          </div>
+          <p>Uma seleção de conceitos demonstrativos para mostrar diferentes linguagens, ritmos e formatos de entrega.</p>
+        </div>
+
+        <div class="project-list">
+          <article class="project project-large reveal">
+            <div class="project-visual visual-lume" data-tilt>
+              <div class="mock-browser">
+                <div class="browser-bar"><span></span><span></span><span></span></div>
+                <div class="lume-layout">
+                  <p>LUME / ARQUITETURA</p>
+                  <strong>Espaços<br />que respiram.</strong>
+                  <div class="lume-shape"></div>
+                </div>
+              </div>
+              <span class="project-index">01</span>
+            </div>
+            <div class="project-meta">
+              <div><h3>Lume Arquitetura</h3><p>Site institucional · Direção visual · Motion</p></div>
+              <span>Conceito demonstrativo</span>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-visual visual-croma" data-tilt>
+              <div class="croma-disc"></div>
+              <div class="croma-copy"><small>EDIÇÃO 04</small><strong>CROMA</strong><span>Catálogo de objetos</span></div>
+              <span class="project-index">02</span>
+            </div>
+            <div class="project-meta">
+              <div><h3>Croma Objetos</h3><p>Catálogo digital · E-commerce conceitual</p></div>
+              <span>Conceito demonstrativo</span>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-visual visual-orbita" data-tilt>
+              <div class="orbita-type"><span>ÓR</span><span>BI</span><span>TA</span></div>
+              <div class="orbita-ball"></div>
+              <span class="project-index">03</span>
+            </div>
+            <div class="project-meta">
+              <div><h3>Órbita Criativa</h3><p>Portfólio · Identidade digital · Interações</p></div>
+              <span>Conceito demonstrativo</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="manifesto" aria-labelledby="manifesto-title">
+        <div class="manifesto-stamp reveal" aria-hidden="true"><span>FORMA</span><span>FUNÇÃO</span><span>MOVIMENTO</span></div>
+        <div class="manifesto-copy reveal">
+          <p class="eyebrow">Como eu penso</p>
+          <h2 id="manifesto-title">Seu site não precisa apenas existir. Ele precisa <em>expressar</em>, orientar e converter intenção em ação.</h2>
+          <p>Eu combino direção de arte, experiência do usuário e desenvolvimento para criar presença digital com personalidade — sem sacrificar clareza, velocidade ou acessibilidade.</p>
+        </div>
+      </section>
+
+      <section class="services section-shell" id="servicos" aria-labelledby="services-title">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">O que eu crio</p><h2 id="services-title">Do primeiro traço ao último clique.</h2></div>
+          <p>Cada entrega parte do problema real, ganha uma linguagem própria e termina pronta para funcionar.</p>
+        </div>
+
+        <div class="service-list">
+          <details class="service-item reveal" open>
+            <summary><span class="service-number">01</span><h3>Sites & landing pages</h3><span class="service-plus" aria-hidden="true"></span></summary>
+            <div class="service-content"><p>Sites institucionais, páginas de lançamento e experiências de marca com narrativa, responsividade e motion sob medida.</p><ul><li>Estratégia de conteúdo</li><li>UI/UX</li><li>Desenvolvimento front-end</li></ul></div>
+          </details>
+          <details class="service-item reveal">
+            <summary><span class="service-number">02</span><h3>Catálogos digitais</h3><span class="service-plus" aria-hidden="true"></span></summary>
+            <div class="service-content"><p>Coleções organizadas para descobrir, comparar e entender produtos ou serviços com facilidade.</p><ul><li>Arquitetura da informação</li><li>Filtros e busca</li><li>Apresentação de produto</li></ul></div>
+          </details>
+          <details class="service-item reveal">
+            <summary><span class="service-number">03</span><h3>Portfólios autorais</h3><span class="service-plus" aria-hidden="true"></span></summary>
+            <div class="service-content"><p>Portfólios que valorizam o trabalho, a visão e o processo sem transformar cada projeto em um template repetido.</p><ul><li>Curadoria e narrativa</li><li>Direção visual</li><li>Interações memoráveis</li></ul></div>
+          </details>
+          <details class="service-item reveal">
+            <summary><span class="service-number">04</span><h3>Direção e sistemas visuais</h3><span class="service-plus" aria-hidden="true"></span></summary>
+            <div class="service-content"><p>Uma base coerente de tipografia, cor, componentes e comportamento para crescer sem perder identidade.</p><ul><li>Art direction</li><li>Design system</li><li>Documentação de uso</li></ul></div>
+          </details>
+        </div>
+      </section>
+
+      <section class="process section-shell" id="processo" aria-labelledby="process-title">
+        <div class="process-intro reveal">
+          <p class="eyebrow">Processo</p>
+          <h2 id="process-title">Estrutura para criar com liberdade.</h2>
+          <p>Um processo claro reduz ruído, melhora decisões e mantém o projeto em movimento.</p>
+        </div>
+        <ol class="process-track">
+          <li class="reveal"><span>01</span><div><h3>Imersão</h3><p>Objetivos, público, referências e prioridades.</p></div></li>
+          <li class="reveal"><span>02</span><div><h3>Direção</h3><p>Conceito visual, conteúdo e arquitetura.</p></div></li>
+          <li class="reveal"><span>03</span><div><h3>Construção</h3><p>Interface, interações e desenvolvimento.</p></div></li>
+          <li class="reveal"><span>04</span><div><h3>Refino</h3><p>Testes, ajustes e entrega final.</p></div></li>
+        </ol>
+      </section>
+
+      <section class="briefing" id="briefing" aria-labelledby="briefing-title">
+        <div class="briefing-copy reveal">
+          <p class="eyebrow">Seu próximo projeto</p>
+          <h2 id="briefing-title">Vamos transformar uma ideia em presença.</h2>
+          <p>Monte um briefing inicial em menos de dois minutos. Ao final, você pode copiar ou baixar o resumo para continuar a conversa pelo seu canal preferido.</p>
+        </div>
+
+        <form class="briefing-form reveal" id="briefing-form" novalidate>
+          <fieldset>
+            <legend>1. O que você precisa?</legend>
+            <div class="choice-grid">
+              <label><input type="radio" name="tipo" value="Site institucional" required /><span>Site institucional</span></label>
+              <label><input type="radio" name="tipo" value="Landing page" /><span>Landing page</span></label>
+              <label><input type="radio" name="tipo" value="Catálogo digital" /><span>Catálogo digital</span></label>
+              <label><input type="radio" name="tipo" value="Portfólio" /><span>Portfólio</span></label>
+            </div>
+          </fieldset>
+          <div class="field-row">
+            <label class="field"><span>2. Nome ou marca</span><input type="text" name="nome" autocomplete="organization" placeholder="Ex.: Aurora Studio" required /></label>
+            <label class="field"><span>3. Momento do projeto</span><select name="momento" required><option value="">Selecione</option><option>É uma ideia nova</option><option>Já existe e precisa evoluir</option><option>Precisa ser lançado em breve</option></select></label>
+          </div>
+          <label class="field"><span>4. Qual é o principal objetivo?</span><textarea name="objetivo" rows="4" placeholder="Conte brevemente o que precisa mudar ou acontecer…" required></textarea></label>
+          <p class="form-error" id="form-error" role="alert" hidden>Revise os campos destacados para gerar seu briefing.</p>
+          <button class="button button-primary button-wide magnetic" type="submit">Gerar meu briefing <span aria-hidden="true">→</span></button>
+        </form>
+
+        <div class="briefing-result" id="briefing-result" tabindex="-1" hidden>
+          <div class="result-heading"><p class="eyebrow">Briefing pronto</p><h3>Um bom começo já está aqui.</h3></div>
+          <pre id="briefing-text"></pre>
+          <div class="result-actions">
+            <a class="button button-primary" href="https://wa.me/5518991820132" target="_blank" rel="noopener noreferrer" data-whatsapp>Enviar pelo WhatsApp <span aria-hidden="true">↗</span></a>
+            <button class="button button-ghost" type="button" data-copy>Copiar briefing</button>
+            <button class="button button-ghost" type="button" data-download>Baixar .txt</button>
+          </div>
+          <p class="copy-status" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-title"><span>Tem uma ideia?</span><a href="https://wa.me/5518991820132?text=Ol%C3%A1%2C%20Nicollas!%20Quero%20pedir%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer">Vamos conversar.</a></div>
+      <div class="footer-bottom"><span>Nicollas Studio © <span data-year></span></span><span>Design + código + intenção</span><a href="#inicio">Voltar ao topo ↑</a></div>
+    </footer>
+
+    <a class="whatsapp-float" href="https://wa.me/5518991820132?text=Ol%C3%A1%2C%20Nicollas!%20Quero%20pedir%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" aria-label="Pedir orçamento pelo WhatsApp">
+      <span aria-hidden="true">WA</span><strong>Orçamento</strong>
+    </a>
+
+    <div class="cursor" aria-hidden="true"></div>
+  </body>
+</html>
