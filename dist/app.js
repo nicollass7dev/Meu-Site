@@ -84,6 +84,81 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
 
+const projectData = {
+  lume: {
+    index: '01', type: 'Site institucional', title: 'Lume Arquitetura',
+    description: 'Uma presença digital silenciosa e espacial, criada para apresentar projetos com ritmo editorial e deixar as imagens respirarem.',
+    deliverables: ['Direção visual', 'Arquitetura de conteúdo', 'Motion responsivo'],
+    colors: ['#bf402d', '#e7e0d0', '#253529'], accent: '#bf402d'
+  },
+  croma: {
+    index: '02', type: 'Catálogo digital', title: 'Croma Objetos',
+    description: 'Um catálogo vibrante que organiza a descoberta por cor, coleção e material, mantendo o produto no centro da experiência.',
+    deliverables: ['Sistema de catálogo', 'Direção cromática', 'Interações de descoberta'],
+    colors: ['#f4b529', '#663bd8', '#48a5e5'], accent: '#f4b529'
+  },
+  orbita: {
+    index: '03', type: 'Portfólio autoral', title: 'Órbita Criativa',
+    description: 'Um portfólio com ritmo de campanha: trabalhos entram em órbita enquanto a navegação permanece clara, rápida e previsível.',
+    deliverables: ['Narrativa de projetos', 'Identidade digital', 'Microinterações'],
+    colors: ['#d7d8f7', '#4b55d5', '#151624'], accent: '#4b55d5'
+  }
+};
+
+const detail = document.querySelector('#project-detail');
+const detailFields = {
+  index: detail.querySelector('[data-detail-index]'), type: detail.querySelector('[data-detail-type]'),
+  title: detail.querySelector('[data-detail-title]'), description: detail.querySelector('[data-detail-description]'),
+  deliverables: detail.querySelector('[data-detail-deliverables]'), palette: detail.querySelector('[data-detail-palette]')
+};
+
+function selectProject(key, shouldFocus = false) {
+  const project = projectData[key];
+  if (!project) return;
+  detail.classList.add('is-changing');
+  window.setTimeout(() => {
+    detailFields.index.textContent = project.index;
+    detailFields.type.textContent = project.type;
+    detailFields.title.textContent = project.title;
+    detailFields.description.textContent = project.description;
+    detailFields.deliverables.replaceChildren(...project.deliverables.map((item) => {
+      const li = document.createElement('li'); li.textContent = item; return li;
+    }));
+    detailFields.palette.replaceChildren(...project.colors.map((color) => {
+      const swatch = document.createElement('span'); swatch.style.setProperty('--swatch', color); return swatch;
+    }));
+    detail.style.setProperty('--detail-accent', project.accent);
+    detail.querySelectorAll('.detail-controls button').forEach((button) => {
+      const active = button.dataset.project === key;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+    detail.classList.remove('is-changing');
+    if (shouldFocus) {
+      detail.scrollIntoView({ behavior: motionDisabled ? 'auto' : 'smooth', block: 'center' });
+      detail.focus({ preventScroll: true });
+    }
+  }, motionDisabled ? 0 : 180);
+}
+
+document.querySelectorAll('[data-project]').forEach((button) => {
+  button.addEventListener('click', () => selectProject(button.dataset.project, button.classList.contains('project-hotspot')));
+});
+
+document.querySelectorAll('.service-item').forEach((item) => {
+  item.addEventListener('toggle', () => {
+    if (!item.open) return;
+    document.querySelectorAll('.service-item[open]').forEach((openItem) => {
+      if (openItem !== item) openItem.removeAttribute('open');
+    });
+  });
+});
+
+const processObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => entry.target.classList.toggle('is-active', entry.isIntersecting));
+}, { threshold: .65 });
+document.querySelectorAll('.process-track li').forEach((step) => processObserver.observe(step));
+
 if (matchMedia('(pointer:fine)').matches) {
   addEventListener('pointermove', (event) => {
     cursor.style.left = `${event.clientX}px`;
@@ -93,6 +168,10 @@ if (matchMedia('(pointer:fine)').matches) {
   document.querySelectorAll('a, button, summary, label').forEach((element) => {
     element.addEventListener('pointerenter', () => cursor.classList.add('active'));
     element.addEventListener('pointerleave', () => cursor.classList.remove('active'));
+  });
+  document.querySelectorAll('.project-visual').forEach((element) => {
+    element.addEventListener('pointerenter', () => cursor.classList.add('project'));
+    element.addEventListener('pointerleave', () => cursor.classList.remove('project'));
   });
 }
 
