@@ -89,19 +89,19 @@ const projectData = {
     index: '01', type: 'Arquitetura', title: 'Site institucional',
     description: 'Página com bastante espaço, tipografia grande e foco nas imagens dos projetos. Funciona bem para arquitetos e profissionais de interiores.',
     deliverables: ['Layout editorial', 'Galeria responsiva', 'Animação leve'],
-    colors: ['#bf402d', '#e7e0d0', '#253529'], accent: '#bf402d'
+    colors: ['#541a2e', '#ffa586', '#232f49'], accent: '#b51a29'
   },
   croma: {
     index: '02', type: 'Produtos', title: 'Catálogo digital',
     description: 'Produtos organizados por coleção, cor e material. A navegação facilita a comparação sem esconder preço, medidas e outras informações importantes.',
     deliverables: ['Categorias e filtros', 'Página de produto', 'Busca responsiva'],
-    colors: ['#f4b529', '#663bd8', '#48a5e5'], accent: '#f4b529'
+    colors: ['#ffa586', '#b51a29', '#384358'], accent: '#ffa586'
   },
   orbita: {
     index: '03', type: 'Projetos criativos', title: 'Portfólio autoral',
     description: 'Projetos em destaque, texto curto e transições mais marcantes. A navegação continua simples para que o efeito não atrapalhe o conteúdo.',
     deliverables: ['Página de projeto', 'Navegação simples', 'Microinterações'],
-    colors: ['#d7d8f7', '#4b55d5', '#151624'], accent: '#4b55d5'
+    colors: ['#384358', '#b51a29', '#16162f'], accent: '#384358'
   }
 };
 
