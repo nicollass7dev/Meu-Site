@@ -202,7 +202,7 @@ button { color: inherit; }
 .field input::placeholder, .field textarea::placeholder { color: rgba(255,255,255,.55); }
 .field input[aria-invalid="true"], .field textarea[aria-invalid="true"], .field select[aria-invalid="true"] { border: 2px solid var(--peach); }
 .form-error { margin: 0; padding: .8rem 1rem; background: var(--peach); color: var(--wine); }
-.briefing-result { grid-column: 2; border-top: 1px solid rgba(255,255,255,.4); padding-top: 2rem; }
+.briefing-result { grid-column: 2; border-top: 1px solid rgba(255,255,255,.4); padding-top: 2rem; scroll-margin-top: 6.5rem; }
 .briefing-result h3 { margin: 0; font-size: 2rem; }
 .briefing-result pre { white-space: pre-wrap; background: rgba(0,0,0,.18); padding: 1.5rem; font: .86rem/1.7 var(--font-mono); border: 1px solid rgba(255,255,255,.25); }
 .result-actions { display: flex; gap: .75rem; flex-wrap: wrap; }

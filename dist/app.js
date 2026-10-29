@@ -16,7 +16,7 @@ let motionDisabled = savedMotion === 'true' || (savedMotion === null && prefersR
 function applyMotionPreference() {
   body.classList.toggle('motion-off', motionDisabled);
   motionToggle.setAttribute('aria-pressed', String(motionDisabled));
-  motionLabel.textContent = motionDisabled ? 'Motion pausado' : 'Motion ligado';
+  motionLabel.textContent = motionDisabled ? 'Animações pausadas' : 'Animações ativas';
 }
 
 applyMotionPreference();
@@ -86,21 +86,21 @@ document.querySelectorAll('.reveal').forEach((element) => observer.observe(eleme
 
 const projectData = {
   lume: {
-    index: '01', type: 'Arquitetura', title: 'Site institucional',
-    description: 'Página com bastante espaço, tipografia grande e foco nas imagens dos projetos. Funciona bem para arquitetos e profissionais de interiores.',
-    deliverables: ['Layout editorial', 'Galeria responsiva', 'Animação leve'],
+    index: '01', type: 'Arquitetura', title: 'Experiência institucional',
+    description: 'Composição editorial com amplo respiro, tipografia expressiva e protagonismo para imagens de projetos arquitetônicos.',
+    deliverables: ['Direção editorial', 'Galeria responsiva', 'Motion sutil'],
     colors: ['#541a2e', '#ffa586', '#232f49'], accent: '#b51a29'
   },
   croma: {
-    index: '02', type: 'Produtos', title: 'Catálogo digital',
-    description: 'Produtos organizados por coleção, cor e material. A navegação facilita a comparação sem esconder preço, medidas e outras informações importantes.',
-    deliverables: ['Categorias e filtros', 'Página de produto', 'Busca responsiva'],
+    index: '02', type: 'Produtos', title: 'Experiência de catálogo',
+    description: 'Estrutura orientada à descoberta de produtos, com organização por coleção, atributos objetivos e comparação clara entre opções.',
+    deliverables: ['Arquitetura de categorias', 'Detalhamento de produto', 'Pesquisa responsiva'],
     colors: ['#ffa586', '#b51a29', '#384358'], accent: '#ffa586'
   },
   orbita: {
-    index: '03', type: 'Projetos criativos', title: 'Portfólio autoral',
-    description: 'Projetos em destaque, texto curto e transições mais marcantes. A navegação continua simples para que o efeito não atrapalhe o conteúdo.',
-    deliverables: ['Página de projeto', 'Navegação simples', 'Microinterações'],
+    index: '03', type: 'Projetos criativos', title: 'Portfólio profissional',
+    description: 'Narrativa visual focada em projetos selecionados, com transições expressivas e navegação objetiva para preservar a clareza do conteúdo.',
+    deliverables: ['Estudos de caso', 'Navegação objetiva', 'Microinterações'],
     colors: ['#384358', '#b51a29', '#16162f'], accent: '#384358'
   }
 };
@@ -216,20 +216,20 @@ form.addEventListener('submit', (event) => {
   formError.hidden = true;
   const data = new FormData(form);
   const date = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long' }).format(new Date());
-  generatedBrief = `PEDIDO DE ORÇAMENTO: ${data.get('nome')}\nGerado em ${date}\n\nTipo de projeto\n${data.get('tipo')}\n\nMomento atual\n${data.get('momento')}\n\nObjetivo principal\n${data.get('objetivo')}\n\nPontos para conversar\n• Público e principal ação do visitante\n• Conteúdo e materiais disponíveis\n• Referências visuais\n• Páginas, prazo e forma de entrega`;
+  generatedBrief = `SOLICITAÇÃO DE PROPOSTA: ${data.get('nome')}\nPreparada em ${date}\n\nSolução desejada\n${data.get('tipo')}\n\nSituação atual\n${data.get('momento')}\n\nResultado esperado\n${data.get('objetivo')}\n\nPontos para alinhamento\n• Público e principal ação do visitante\n• Conteúdo e materiais disponíveis\n• Referências visuais\n• Estrutura de páginas, prazo e formato de entrega`;
   resultText.textContent = generatedBrief;
-  const whatsappMessage = `Olá, Nicollas! Quero pedir um orçamento.\n\n${generatedBrief}`;
+  const whatsappMessage = `Olá, Nicollas! Gostaria de solicitar uma proposta para meu projeto.\n\n${generatedBrief}`;
   document.querySelector('[data-whatsapp]').href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
   result.hidden = false;
-  result.focus();
-  result.scrollIntoView({ behavior: motionDisabled ? 'auto' : 'smooth', block: 'center' });
+  result.focus({ preventScroll: true });
+  result.scrollIntoView({ behavior: motionDisabled ? 'auto' : 'smooth', block: 'start' });
 });
 
 document.querySelector('[data-copy]').addEventListener('click', async () => {
   const status = document.querySelector('.copy-status');
   try {
     await navigator.clipboard.writeText(generatedBrief);
-    status.textContent = 'Briefing copiado para a área de transferência.';
+    status.textContent = 'Informações copiadas para a área de transferência.';
   } catch {
     status.textContent = 'Não foi possível copiar automaticamente. Selecione o texto acima.';
   }
@@ -240,7 +240,7 @@ document.querySelector('[data-download]').addEventListener('click', () => {
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.href = url;
-  link.download = 'briefing-inicial.txt';
+  link.download = 'solicitacao-de-proposta.txt';
   link.click();
   URL.revokeObjectURL(url);
 });
