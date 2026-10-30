@@ -89,19 +89,19 @@ const projectData = {
     index: '01', type: 'Arquitetura', title: 'Experiência institucional',
     description: 'Composição editorial com amplo respiro, tipografia expressiva e protagonismo para imagens de projetos arquitetônicos.',
     deliverables: ['Direção editorial', 'Galeria responsiva', 'Motion sutil'],
-    colors: ['#541a2e', '#ffa586', '#232f49'], accent: '#b51a29'
+    colors: ['#011e31', '#d7e0eb', '#0c4160'], accent: '#68869a'
   },
   croma: {
     index: '02', type: 'Produtos', title: 'Experiência de catálogo',
     description: 'Estrutura orientada à descoberta de produtos, com organização por coleção, atributos objetivos e comparação clara entre opções.',
     deliverables: ['Arquitetura de categorias', 'Detalhamento de produto', 'Pesquisa responsiva'],
-    colors: ['#ffa586', '#b51a29', '#384358'], accent: '#ffa586'
+    colors: ['#d7e0eb', '#68869a', '#0c4160'], accent: '#d7e0eb'
   },
   orbita: {
     index: '03', type: 'Projetos criativos', title: 'Portfólio profissional',
     description: 'Narrativa visual focada em projetos selecionados, com transições expressivas e navegação objetiva para preservar a clareza do conteúdo.',
     deliverables: ['Estudos de caso', 'Navegação objetiva', 'Microinterações'],
-    colors: ['#384358', '#b51a29', '#16162f'], accent: '#384358'
+    colors: ['#68869a', '#0c4160', '#011e31'], accent: '#68869a'
   }
 };
 
