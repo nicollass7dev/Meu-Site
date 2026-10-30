@@ -51,8 +51,8 @@ button { color: inherit; }
 .hero-grid { position: absolute; inset: 0; opacity: .18; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 8vw 8vw; mask-image: linear-gradient(to bottom, black, transparent 85%); }
 .hero-copy { position: relative; z-index: 2; }
 .eyebrow { margin: 0 0 1.5rem; font: 500 .72rem var(--font-mono); text-transform: uppercase; letter-spacing: .13em; color: var(--acid); }
-.hero-title { margin: 0; font-size: clamp(3.7rem, 8vw, 9.2rem); line-height: .86; letter-spacing: -.07em; font-weight: 600; }
-.hero-title .line { display: block; overflow: hidden; padding-bottom: .1em; }
+.hero-title { margin: 0; font-size: clamp(3.7rem, 8vw, 9.2rem); line-height: .94; letter-spacing: -.07em; font-weight: 600; }
+.hero-title .line { display: block; overflow: hidden; padding: .14em .08em .2em; margin: -.14em -.08em -.2em; }
 .hero-title .line > span { display: block; transform: translateY(115%); animation: line-in .9s var(--ease) forwards; }
 .hero-title .line:nth-child(2) > span { animation-delay: .12s; }
 .hero-title .line:nth-child(3) > span { animation-delay: .24s; }
