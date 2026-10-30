@@ -9,7 +9,21 @@
     <link rel="stylesheet" href="./styles.css" />
     <script src="./app.js" defer></script>
   </head>
-  <body>
+  <body class="intro-active">
+    <div class="site-intro" data-intro aria-hidden="true">
+      <div class="intro-grid"></div>
+      <div class="intro-topline">
+        <span>NICOLLAS STUDIO®</span>
+        <span>INTERFACE / MOTION / CODE</span>
+      </div>
+      <strong class="intro-mark">N.</strong>
+      <div class="intro-status">
+        <span>INICIANDO EXPERIÊNCIA</span>
+        <span data-intro-count>000</span>
+      </div>
+      <div class="intro-progress"><span></span></div>
+    </div>
+
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
@@ -24,7 +38,7 @@
       </button>
 
       <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
-        <a href="#trabalhos">Projetos</a>
+        <a href="#trabalhos">Possibilidades</a>
         <a href="#servicos">Soluções</a>
         <a href="#processo">Metodologia</a>
         <a href="#briefing">Solicitar proposta</a>
@@ -76,7 +90,7 @@
         </div>
 
         <a class="scroll-cue" href="#trabalhos">
-          <span>Conhecer projetos</span>
+          <span>Conhecer soluções</span>
           <span class="scroll-line" aria-hidden="true"></span>
         </a>
       </section>
@@ -89,73 +103,36 @@
       </section>
 
       <section class="work section-shell" id="trabalhos" aria-labelledby="work-title">
+        <div class="work-atmosphere" aria-hidden="true">
+          <img src="./assets/project-spatial-interface.jpg" alt="" width="1400" height="788" decoding="async" />
+          <img src="./assets/project-digital-catalog.jpg" alt="" width="1400" height="933" decoding="async" />
+          <img src="./assets/project-motion-system.jpg" alt="" width="1400" height="788" decoding="async" />
+        </div>
         <div class="section-heading reveal" data-reveal="left">
           <div>
-            <p class="eyebrow">Conceitos digitais</p>
-            <h2 id="work-title">Tecnologia que ganha forma.</h2>
+            <p class="eyebrow">Possibilidades digitais</p>
+            <h2 id="work-title">O que posso criar para sua marca.</h2>
           </div>
-          <p>Três estudos autorais de interface, imagem e movimento.</p>
+          <p>Design, desenvolvimento e movimento aplicados ao seu objetivo.</p>
         </div>
 
-        <div class="project-list">
-          <article class="project project-large reveal" data-reveal="image">
-            <div class="project-visual visual-lume" data-tilt>
-              <img class="project-image" src="./assets/project-spatial-interface.jpg" width="1400" height="788" alt="Ambiente tecnológico com planos de vidro, arquitetura e luz digital" decoding="async" loading="lazy" />
-              <div class="project-caption" aria-hidden="true"><span>Spatial interface</span><span>01 — 03</span></div>
-              <span class="project-index">01</span>
-              <button class="project-hotspot" type="button" data-project="lume" aria-controls="project-detail">Analisar conceito <span aria-hidden="true">↗</span></button>
-            </div>
-            <div class="project-meta">
-              <div><h3>Interface espacial</h3><p>Arquitetura · Interação · Profundidade</p></div>
-              <span>Conceito 01</span>
-            </div>
+        <div class="capability-grid">
+          <article class="capability-card reveal">
+            <span>01 / WEB</span>
+            <h3>Sites que posicionam</h3>
+            <p>Presença profissional com clareza, identidade e conversão.</p>
           </article>
-
-          <article class="project reveal" data-reveal="image">
-            <div class="project-visual visual-croma" data-tilt>
-              <img class="project-image" src="./assets/project-digital-catalog.jpg" width="1400" height="933" alt="Sistema de catálogo tridimensional com módulos de vidro e objetos digitalizados" decoding="async" loading="lazy" />
-              <div class="project-caption" aria-hidden="true"><span>Digital catalog</span><span>02 — 03</span></div>
-              <span class="project-index">02</span>
-              <button class="project-hotspot" type="button" data-project="croma" aria-controls="project-detail">Analisar conceito <span aria-hidden="true">↗</span></button>
-            </div>
-            <div class="project-meta">
-              <div><h3>Catálogo imersivo</h3><p>Produtos · Sistema modular · Descoberta</p></div>
-              <span>Conceito 02</span>
-            </div>
+          <article class="capability-card reveal">
+            <span>02 / CATÁLOGOS</span>
+            <h3>Produtos bem apresentados</h3>
+            <p>Estruturas digitais fáceis de explorar, comparar e compartilhar.</p>
           </article>
-
-          <article class="project reveal" data-reveal="image">
-            <div class="project-visual visual-orbita" data-tilt>
-              <img class="project-image" src="./assets/project-motion-system.jpg" width="1400" height="788" alt="Formas cromadas e tecidos digitais em composição dinâmica azul" decoding="async" loading="lazy" />
-              <div class="project-caption" aria-hidden="true"><span>Motion system</span><span>03 — 03</span></div>
-              <span class="project-index">03</span>
-              <button class="project-hotspot" type="button" data-project="orbita" aria-controls="project-detail">Analisar conceito <span aria-hidden="true">↗</span></button>
-            </div>
-            <div class="project-meta">
-              <div><h3>Portfólio em movimento</h3><p>Identidade · Narrativa · Motion</p></div>
-              <span>Conceito 03</span>
-            </div>
+          <article class="capability-card reveal">
+            <span>03 / PORTFÓLIOS</span>
+            <h3>Trabalho com presença</h3>
+            <p>Uma narrativa visual que valoriza sua experiência e seus resultados.</p>
           </article>
         </div>
-
-        <section class="project-detail reveal" id="project-detail" tabindex="-1" aria-live="polite" aria-labelledby="detail-title">
-          <div class="detail-rail" aria-hidden="true"><span data-detail-index>01</span><span>Conceito visual</span></div>
-          <div class="detail-main">
-            <p class="eyebrow" data-detail-type>Arquitetura digital</p>
-            <h3 id="detail-title" data-detail-title>Interface espacial</h3>
-            <p data-detail-description>Arquitetura e interface combinadas em uma navegação imersiva.</p>
-          </div>
-          <div class="detail-aside">
-            <p class="detail-label">Elementos da solução</p>
-            <ul data-detail-deliverables><li>Direção visual</li><li>Interface responsiva</li><li>Motion</li></ul>
-            <div class="detail-palette" data-detail-palette aria-label="Cores do estudo"><span style="--swatch:#011e31"></span><span style="--swatch:#d7e0eb"></span><span style="--swatch:#0c4160"></span></div>
-          </div>
-          <div class="detail-controls" aria-label="Selecionar estudo">
-            <button type="button" class="is-active" data-project="lume" aria-pressed="true">01</button>
-            <button type="button" data-project="croma" aria-pressed="false">02</button>
-            <button type="button" data-project="orbita" aria-pressed="false">03</button>
-          </div>
-        </section>
       </section>
 
       <section class="manifesto" aria-labelledby="manifesto-title">

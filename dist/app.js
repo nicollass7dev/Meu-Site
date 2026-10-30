@@ -9,6 +9,8 @@ const nav = document.querySelector('.main-nav');
 const cursor = document.querySelector('.cursor');
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 const whatsappNumber = '5518991820132';
+const intro = document.querySelector('[data-intro]');
+const introCount = document.querySelector('[data-intro-count]');
 
 body.classList.add('motion-ready');
 
@@ -19,9 +21,26 @@ function applyMotionPreference() {
   body.classList.toggle('motion-off', motionDisabled);
   motionToggle.setAttribute('aria-pressed', String(motionDisabled));
   motionLabel.textContent = motionDisabled ? 'Animações pausadas' : 'Animações ativas';
+  if (motionDisabled && intro) body.classList.add('intro-complete');
 }
 
 applyMotionPreference();
+
+if (intro) {
+  if (motionDisabled) {
+    body.classList.add('intro-complete');
+    introCount.textContent = '100';
+  } else {
+    const introStart = performance.now();
+    const updateIntro = (now) => {
+      const progressValue = Math.min(100, Math.round(((now - introStart) / 1250) * 100));
+      introCount.textContent = String(progressValue).padStart(3, '0');
+      if (progressValue < 100) requestAnimationFrame(updateIntro);
+    };
+    requestAnimationFrame(updateIntro);
+    setTimeout(() => body.classList.add('intro-complete'), 2050);
+  }
+}
 
 motionToggle.addEventListener('click', () => {
   motionDisabled = !motionDisabled;
@@ -105,67 +124,6 @@ addEventListener('scroll', revealInViewport, { passive: true });
 addEventListener('resize', revealInViewport, { passive: true });
 requestAnimationFrame(revealInViewport);
 
-const projectData = {
-  lume: {
-    index: '01', type: 'Arquitetura digital', title: 'Interface espacial',
-    description: 'Arquitetura e interface combinadas em uma navegação imersiva.',
-    deliverables: ['Direção visual', 'Interface responsiva', 'Motion'],
-    colors: ['#011e31', '#d7e0eb', '#0c4160'], accent: '#68869a'
-  },
-  croma: {
-    index: '02', type: 'Produtos digitais', title: 'Catálogo imersivo',
-    description: 'Descoberta de produtos em uma estrutura modular e visual.',
-    deliverables: ['Categorias', 'Filtros', 'Detalhamento'],
-    colors: ['#d7e0eb', '#68869a', '#0c4160'], accent: '#d7e0eb'
-  },
-  orbita: {
-    index: '03', type: 'Identidade em movimento', title: 'Portfólio cinético',
-    description: 'Uma narrativa curta com imagens, ritmo e transições expressivas.',
-    deliverables: ['Curadoria', 'Narrativa', 'Microinterações'],
-    colors: ['#68869a', '#0c4160', '#011e31'], accent: '#68869a'
-  }
-};
-
-const detail = document.querySelector('#project-detail');
-const detailFields = {
-  index: detail.querySelector('[data-detail-index]'), type: detail.querySelector('[data-detail-type]'),
-  title: detail.querySelector('[data-detail-title]'), description: detail.querySelector('[data-detail-description]'),
-  deliverables: detail.querySelector('[data-detail-deliverables]'), palette: detail.querySelector('[data-detail-palette]')
-};
-
-function selectProject(key, shouldFocus = false) {
-  const project = projectData[key];
-  if (!project) return;
-  detail.classList.add('is-changing');
-  window.setTimeout(() => {
-    detailFields.index.textContent = project.index;
-    detailFields.type.textContent = project.type;
-    detailFields.title.textContent = project.title;
-    detailFields.description.textContent = project.description;
-    detailFields.deliverables.replaceChildren(...project.deliverables.map((item) => {
-      const li = document.createElement('li'); li.textContent = item; return li;
-    }));
-    detailFields.palette.replaceChildren(...project.colors.map((color) => {
-      const swatch = document.createElement('span'); swatch.style.setProperty('--swatch', color); return swatch;
-    }));
-    detail.style.setProperty('--detail-accent', project.accent);
-    detail.querySelectorAll('.detail-controls button').forEach((button) => {
-      const active = button.dataset.project === key;
-      button.classList.toggle('is-active', active);
-      button.setAttribute('aria-pressed', String(active));
-    });
-    detail.classList.remove('is-changing');
-    if (shouldFocus) {
-      detail.scrollIntoView({ behavior: motionDisabled ? 'auto' : 'smooth', block: 'center' });
-      detail.focus({ preventScroll: true });
-    }
-  }, motionDisabled ? 0 : 180);
-}
-
-document.querySelectorAll('[data-project]').forEach((button) => {
-  button.addEventListener('click', () => selectProject(button.dataset.project, button.classList.contains('project-hotspot')));
-});
-
 document.querySelectorAll('.service-item').forEach((item) => {
   item.addEventListener('toggle', () => {
     if (!item.open) return;
@@ -190,22 +148,7 @@ if (matchMedia('(pointer:fine)').matches) {
     element.addEventListener('pointerenter', () => cursor.classList.add('active'));
     element.addEventListener('pointerleave', () => cursor.classList.remove('active'));
   });
-  document.querySelectorAll('.project-visual').forEach((element) => {
-    element.addEventListener('pointerenter', () => cursor.classList.add('project'));
-    element.addEventListener('pointerleave', () => cursor.classList.remove('project'));
-  });
 }
-
-document.querySelectorAll('[data-tilt]').forEach((card) => {
-  card.addEventListener('pointermove', (event) => {
-    if (motionDisabled || !matchMedia('(pointer:fine)').matches) return;
-    const rect = card.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width - .5;
-    const y = (event.clientY - rect.top) / rect.height - .5;
-    card.style.transform = `perspective(900px) rotateX(${-y * 3}deg) rotateY(${x * 4}deg)`;
-  });
-  card.addEventListener('pointerleave', () => { card.style.transform = ''; });
-});
 
 document.querySelectorAll('.magnetic').forEach((button) => {
   button.addEventListener('pointermove', (event) => {
