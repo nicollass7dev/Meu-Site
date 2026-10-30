@@ -40,14 +40,14 @@
       <section class="hero" id="inicio" aria-labelledby="hero-title">
         <div class="hero-grid" aria-hidden="true"></div>
         <div class="hero-copy">
-          <p class="eyebrow reveal">Design digital e desenvolvimento front-end</p>
+          <p class="eyebrow reveal" data-reveal="left">Design digital + tecnologia criativa</p>
           <h1 id="hero-title" class="hero-title" aria-label="Presença digital com identidade e movimento.">
             <span class="line"><span>Presença digital</span></span>
             <span class="line accent-line"><span>com identidade</span></span>
             <span class="line"><span>e movimento.</span></span>
           </h1>
-          <div class="hero-bottom reveal">
-            <p>Planejo, desenho e desenvolvo experiências digitais completas, com estrutura estratégica, identidade visual e funcionamento consistente em qualquer dispositivo.</p>
+          <div class="hero-bottom reveal" data-reveal="up">
+            <p>Sites, catálogos e portfólios com direção visual, código e movimento.</p>
             <div class="hero-actions">
               <a class="button button-primary magnetic" href="#briefing">
                 Solicitar proposta
@@ -57,7 +57,7 @@
           </div>
         </div>
 
-        <div class="hero-stage" data-parallax>
+        <div class="hero-stage" data-parallax aria-label="Sistema visual em movimento">
           <div class="stage-orbit orbit-one" aria-hidden="true"></div>
           <div class="stage-orbit orbit-two" aria-hidden="true"></div>
           <a class="stage-card stage-card-a" href="#servicos" aria-label="Conhecer as soluções de desenvolvimento web">
@@ -89,56 +89,50 @@
       </section>
 
       <section class="work section-shell" id="trabalhos" aria-labelledby="work-title">
-        <div class="section-heading reveal">
+        <div class="section-heading reveal" data-reveal="left">
           <div>
-            <p class="eyebrow">Explorações de interface</p>
-            <h2 id="work-title">Soluções visuais para diferentes objetivos.</h2>
+            <p class="eyebrow">Conceitos digitais</p>
+            <h2 id="work-title">Tecnologia que ganha forma.</h2>
           </div>
-          <p>Estudos conceituais que demonstram como estratégia, composição e interação podem ser adaptadas a diferentes segmentos.</p>
+          <p>Três estudos autorais de interface, imagem e movimento.</p>
         </div>
 
         <div class="project-list">
-          <article class="project project-large reveal">
+          <article class="project project-large reveal" data-reveal="image">
             <div class="project-visual visual-lume" data-tilt>
-              <div class="mock-browser">
-                <div class="browser-bar"><span></span><span></span><span></span></div>
-                <div class="lume-layout">
-                  <p>CONCEITO / ARQUITETURA</p>
-                  <strong>Espaço,<br />ritmo e luz.</strong>
-                  <div class="lume-shape"></div>
-                </div>
-              </div>
+              <img class="project-image" src="./assets/project-spatial-interface.jpg" width="1400" height="788" alt="Ambiente tecnológico com planos de vidro, arquitetura e luz digital" decoding="async" loading="lazy" />
+              <div class="project-caption" aria-hidden="true"><span>Spatial interface</span><span>01 — 03</span></div>
               <span class="project-index">01</span>
               <button class="project-hotspot" type="button" data-project="lume" aria-controls="project-detail">Analisar conceito <span aria-hidden="true">↗</span></button>
             </div>
             <div class="project-meta">
-              <div><h3>Presença digital para arquitetura</h3><p>Institucional · Portfólio de projetos · Motion</p></div>
+              <div><h3>Interface espacial</h3><p>Arquitetura · Interação · Profundidade</p></div>
               <span>Conceito 01</span>
             </div>
           </article>
 
-          <article class="project reveal">
+          <article class="project reveal" data-reveal="image">
             <div class="project-visual visual-croma" data-tilt>
-              <div class="croma-disc"></div>
-              <div class="croma-copy"><small>CATÁLOGO 04</small><strong>OBJETOS</strong><span>Coleção por cor e material</span></div>
+              <img class="project-image" src="./assets/project-digital-catalog.jpg" width="1400" height="933" alt="Sistema de catálogo tridimensional com módulos de vidro e objetos digitalizados" decoding="async" loading="lazy" />
+              <div class="project-caption" aria-hidden="true"><span>Digital catalog</span><span>02 — 03</span></div>
               <span class="project-index">02</span>
               <button class="project-hotspot" type="button" data-project="croma" aria-controls="project-detail">Analisar conceito <span aria-hidden="true">↗</span></button>
             </div>
             <div class="project-meta">
-              <div><h3>Catálogo digital de produtos</h3><p>Organização · Filtros · Detalhamento técnico</p></div>
+              <div><h3>Catálogo imersivo</h3><p>Produtos · Sistema modular · Descoberta</p></div>
               <span>Conceito 02</span>
             </div>
           </article>
 
-          <article class="project reveal">
+          <article class="project reveal" data-reveal="image">
             <div class="project-visual visual-orbita" data-tilt>
-              <div class="orbita-type"><span>POR</span><span>TFO</span><span>LIO</span></div>
-              <div class="orbita-ball"></div>
+              <img class="project-image" src="./assets/project-motion-system.jpg" width="1400" height="788" alt="Formas cromadas e tecidos digitais em composição dinâmica azul" decoding="async" loading="lazy" />
+              <div class="project-caption" aria-hidden="true"><span>Motion system</span><span>03 — 03</span></div>
               <span class="project-index">03</span>
               <button class="project-hotspot" type="button" data-project="orbita" aria-controls="project-detail">Analisar conceito <span aria-hidden="true">↗</span></button>
             </div>
             <div class="project-meta">
-              <div><h3>Portfólio profissional</h3><p>Curadoria · Narrativa · Microinterações</p></div>
+              <div><h3>Portfólio em movimento</h3><p>Identidade · Narrativa · Motion</p></div>
               <span>Conceito 03</span>
             </div>
           </article>
@@ -147,13 +141,13 @@
         <section class="project-detail reveal" id="project-detail" tabindex="-1" aria-live="polite" aria-labelledby="detail-title">
           <div class="detail-rail" aria-hidden="true"><span data-detail-index>01</span><span>Conceito visual</span></div>
           <div class="detail-main">
-            <p class="eyebrow" data-detail-type>Arquitetura</p>
-            <h3 id="detail-title" data-detail-title>Experiência institucional</h3>
-            <p data-detail-description>Composição editorial com amplo respiro, tipografia expressiva e protagonismo para imagens de projetos arquitetônicos.</p>
+            <p class="eyebrow" data-detail-type>Arquitetura digital</p>
+            <h3 id="detail-title" data-detail-title>Interface espacial</h3>
+            <p data-detail-description>Arquitetura e interface combinadas em uma navegação imersiva.</p>
           </div>
           <div class="detail-aside">
             <p class="detail-label">Elementos da solução</p>
-            <ul data-detail-deliverables><li>Direção editorial</li><li>Galeria responsiva</li><li>Motion sutil</li></ul>
+            <ul data-detail-deliverables><li>Direção visual</li><li>Interface responsiva</li><li>Motion</li></ul>
             <div class="detail-palette" data-detail-palette aria-label="Cores do estudo"><span style="--swatch:#011e31"></span><span style="--swatch:#d7e0eb"></span><span style="--swatch:#0c4160"></span></div>
           </div>
           <div class="detail-controls" aria-label="Selecionar estudo">
@@ -165,59 +159,59 @@
       </section>
 
       <section class="manifesto" aria-labelledby="manifesto-title">
-        <div class="manifesto-stamp reveal" aria-hidden="true"><span>ESTRATÉGIA</span><span>DESIGN</span><span>TECNOLOGIA</span></div>
-        <div class="manifesto-copy reveal">
+        <div class="manifesto-stamp reveal" data-reveal="spin" aria-hidden="true"><span>ESTRATÉGIA</span><span>DESIGN</span><span>TECNOLOGIA</span></div>
+        <div class="manifesto-copy reveal" data-reveal="left">
           <p class="eyebrow">Abordagem integrada</p>
           <h2 id="manifesto-title">Direção visual e desenvolvimento em <em>uma única entrega.</em></h2>
-          <p>Estratégia, interface e implementação são conduzidas de forma conjunta. Isso preserva a identidade do projeto, reduz inconsistências e garante uma experiência sólida do desktop ao celular.</p>
+          <p>Estratégia, interface e código conectados do primeiro rascunho à publicação.</p>
         </div>
       </section>
 
       <section class="services section-shell" id="servicos" aria-labelledby="services-title">
-        <div class="section-heading reveal">
-          <div><p class="eyebrow">Soluções</p><h2 id="services-title">Entregas digitais sob medida.</h2></div>
-          <p>Cada projeto é estruturado de acordo com o objetivo, o público e o momento da marca. O escopo é definido após uma análise inicial.</p>
+        <div class="section-heading reveal" data-reveal="left">
+          <div><p class="eyebrow">Soluções</p><h2 id="services-title">Do conceito ao código.</h2></div>
+          <p>Uma solução visual para cada objetivo.</p>
         </div>
 
         <div class="service-list">
           <details class="service-item reveal" open>
             <summary><span class="service-number">01</span><h3>Sites institucionais e landing pages</h3><span class="service-plus" aria-hidden="true"></span></summary>
-            <div class="service-content"><p>Projetos completos para apresentar empresas, serviços e campanhas com clareza, credibilidade e foco em conversão.</p><ul><li>Arquitetura de conteúdo</li><li>Interface responsiva</li><li>Desenvolvimento front-end</li></ul></div>
+            <div class="service-content"><p>Presença clara, rápida e convincente.</p><ul><li>Conteúdo</li><li>Interface</li><li>Front-end</li></ul></div>
           </details>
           <details class="service-item reveal">
             <summary><span class="service-number">02</span><h3>Catálogos digitais</h3><span class="service-plus" aria-hidden="true"></span></summary>
-            <div class="service-content"><p>Estruturas digitais que facilitam a descoberta, a comparação e a apresentação detalhada de produtos ou serviços.</p><ul><li>Organização por categorias</li><li>Filtros e pesquisa</li><li>Detalhamento de produtos</li></ul></div>
+            <div class="service-content"><p>Produtos organizados para descobrir e comparar.</p><ul><li>Categorias</li><li>Filtros</li><li>Detalhes</li></ul></div>
           </details>
           <details class="service-item reveal">
             <summary><span class="service-number">03</span><h3>Portfólios profissionais</h3><span class="service-plus" aria-hidden="true"></span></summary>
-            <div class="service-content"><p>Apresentações digitais que valorizam repertório, processo e resultados por meio de uma narrativa visual consistente.</p><ul><li>Curadoria de projetos</li><li>Hierarquia editorial</li><li>Interações personalizadas</li></ul></div>
+            <div class="service-content"><p>Projetos apresentados como experiências.</p><ul><li>Curadoria</li><li>Narrativa</li><li>Interações</li></ul></div>
           </details>
           <details class="service-item reveal">
             <summary><span class="service-number">04</span><h3>Direção visual e sistemas de interface</h3><span class="service-plus" aria-hidden="true"></span></summary>
-            <div class="service-content"><p>Definição de linguagem visual, componentes e padrões para manter a comunicação digital coesa e escalável.</p><ul><li>Direção de arte</li><li>Biblioteca de componentes</li><li>Diretrizes de aplicação</li></ul></div>
+            <div class="service-content"><p>Uma linguagem consistente e pronta para crescer.</p><ul><li>Direção</li><li>Componentes</li><li>Padrões</li></ul></div>
           </details>
         </div>
       </section>
 
       <section class="process section-shell" id="processo" aria-labelledby="process-title">
-        <div class="process-intro reveal">
+        <div class="process-intro reveal" data-reveal="left">
           <p class="eyebrow">Metodologia</p>
-          <h2 id="process-title">Um processo claro, do diagnóstico à publicação.</h2>
-          <p>Cada etapa possui um objetivo definido, com decisões transparentes e acompanhamento durante todo o projeto.</p>
+          <h2 id="process-title">Quatro etapas. Sem ruído.</h2>
+          <p>Você acompanha cada decisão.</p>
         </div>
         <ol class="process-track">
-          <li class="reveal"><span>01</span><div><h3>Diagnóstico e alinhamento</h3><p>Levantamento de objetivos, público, conteúdo disponível, referências e prioridades.</p></div></li>
-          <li class="reveal"><span>02</span><div><h3>Arquitetura e direção visual</h3><p>Definição da estrutura, hierarquia das informações e linguagem visual da experiência.</p></div></li>
-          <li class="reveal"><span>03</span><div><h3>Desenvolvimento front-end</h3><p>Implementação responsiva das páginas, interações e recursos aprovados.</p></div></li>
-          <li class="reveal"><span>04</span><div><h3>Validação e publicação</h3><p>Revisão funcional, ajustes finais e preparação da versão definitiva para lançamento.</p></div></li>
+          <li class="reveal"><span>01</span><div><h3>Diagnóstico</h3><p>Objetivo, público e referências.</p></div></li>
+          <li class="reveal"><span>02</span><div><h3>Direção visual</h3><p>Estrutura, linguagem e protótipo.</p></div></li>
+          <li class="reveal"><span>03</span><div><h3>Desenvolvimento</h3><p>Interface responsiva e interações.</p></div></li>
+          <li class="reveal"><span>04</span><div><h3>Publicação</h3><p>Validação, ajustes e lançamento.</p></div></li>
         </ol>
       </section>
 
       <section class="briefing" id="briefing" aria-labelledby="briefing-title">
-        <div class="briefing-copy reveal">
+        <div class="briefing-copy reveal" data-reveal="left">
           <p class="eyebrow">Solicitar proposta</p>
           <h2 id="briefing-title">Vamos estruturar seu projeto.</h2>
-          <p>Compartilhe as informações iniciais. Seus dados serão organizados em uma solicitação pronta para envio pelo WhatsApp.</p>
+          <p>Quatro respostas. Uma proposta mais objetiva.</p>
         </div>
 
         <form class="briefing-form reveal" id="briefing-form" novalidate>
@@ -253,7 +247,7 @@
     </main>
 
     <footer class="site-footer">
-      <div class="footer-title"><span>Pronto para fortalecer sua presença digital?</span><a href="https://wa.me/5518991820132?text=Ol%C3%A1%2C%20Nicollas!%20Quero%20solicitar%20uma%20proposta." target="_blank" rel="noopener noreferrer">Solicite uma proposta.</a></div>
+      <div class="footer-title"><span>Seu próximo projeto começa aqui.</span><a href="https://wa.me/5518991820132?text=Ol%C3%A1%2C%20Nicollas!%20Quero%20solicitar%20uma%20proposta." target="_blank" rel="noopener noreferrer">Vamos conversar.</a></div>
       <div class="footer-bottom"><span>Nicollas Studio © <span data-year></span></span><span>Design estratégico + front-end + motion</span><a href="#inicio">Retornar ao início ↑</a></div>
     </footer>
 

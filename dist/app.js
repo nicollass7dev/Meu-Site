@@ -10,6 +10,8 @@ const cursor = document.querySelector('.cursor');
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 const whatsappNumber = '5518991820132';
 
+body.classList.add('motion-ready');
+
 const savedMotion = localStorage.getItem('motion-disabled');
 let motionDisabled = savedMotion === 'true' || (savedMotion === null && prefersReduced.matches);
 
@@ -81,26 +83,45 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+}, {
+  threshold: 0.04,
+  rootMargin: '0px 0px 14% 0px',
+});
+const revealElements = document.querySelectorAll('.reveal');
+revealElements.forEach((element) => observer.observe(element));
+
+const revealInViewport = () => {
+  revealElements.forEach((element) => {
+    if (element.classList.contains('is-visible')) return;
+    const rect = element.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 1.08 && rect.bottom > -80) {
+      element.classList.add('is-visible');
+      observer.unobserve(element);
+    }
+  });
+};
+
+addEventListener('scroll', revealInViewport, { passive: true });
+addEventListener('resize', revealInViewport, { passive: true });
+requestAnimationFrame(revealInViewport);
 
 const projectData = {
   lume: {
-    index: '01', type: 'Arquitetura', title: 'Experiência institucional',
-    description: 'Composição editorial com amplo respiro, tipografia expressiva e protagonismo para imagens de projetos arquitetônicos.',
-    deliverables: ['Direção editorial', 'Galeria responsiva', 'Motion sutil'],
+    index: '01', type: 'Arquitetura digital', title: 'Interface espacial',
+    description: 'Arquitetura e interface combinadas em uma navegação imersiva.',
+    deliverables: ['Direção visual', 'Interface responsiva', 'Motion'],
     colors: ['#011e31', '#d7e0eb', '#0c4160'], accent: '#68869a'
   },
   croma: {
-    index: '02', type: 'Produtos', title: 'Experiência de catálogo',
-    description: 'Estrutura orientada à descoberta de produtos, com organização por coleção, atributos objetivos e comparação clara entre opções.',
-    deliverables: ['Arquitetura de categorias', 'Detalhamento de produto', 'Pesquisa responsiva'],
+    index: '02', type: 'Produtos digitais', title: 'Catálogo imersivo',
+    description: 'Descoberta de produtos em uma estrutura modular e visual.',
+    deliverables: ['Categorias', 'Filtros', 'Detalhamento'],
     colors: ['#d7e0eb', '#68869a', '#0c4160'], accent: '#d7e0eb'
   },
   orbita: {
-    index: '03', type: 'Projetos criativos', title: 'Portfólio profissional',
-    description: 'Narrativa visual focada em projetos selecionados, com transições expressivas e navegação objetiva para preservar a clareza do conteúdo.',
-    deliverables: ['Estudos de caso', 'Navegação objetiva', 'Microinterações'],
+    index: '03', type: 'Identidade em movimento', title: 'Portfólio cinético',
+    description: 'Uma narrativa curta com imagens, ritmo e transições expressivas.',
+    deliverables: ['Curadoria', 'Narrativa', 'Microinterações'],
     colors: ['#68869a', '#0c4160', '#011e31'], accent: '#68869a'
   }
 };
